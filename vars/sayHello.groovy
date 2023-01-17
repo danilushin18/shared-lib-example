@@ -1,12 +1,11 @@
 #!/usr/bin/env groovy
 
-stage('Build'){
-  steps {
-    def release = false
-      if (release) {
-       sh 'mvn clean install'
+def call(Map config = [:]) {
+    def release = config.release ?: false
+
+    if (release) {
+        sh "mvn clean install"
     } else {
-       sh 'mvn package'
+        sh "mvn clean package"
     }
-  }
 }
