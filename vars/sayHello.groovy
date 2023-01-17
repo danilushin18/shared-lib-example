@@ -1,11 +1,11 @@
 #!/usr/bin/env groovy
 
- def check(release) {
+ def call(release) {
  
     if (release) {
         sh "mvn clean install"
     } else {
         sh "mvn clean package"
     }
-return release
+
 }
