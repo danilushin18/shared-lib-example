@@ -1,11 +1,11 @@
 #!/usr/bin/env groovy
 
  def call(release, path) {
-  sh "cd ${path}"
   if (release) {
-        sh "mvn clean install"
+   echo "pwd"
+        sh "cd ${path} && mvn clean install"
     } else {
-        sh "mvn clean package"
+        sh "cd ${path} && mvn clean package"
     }
 
 }
